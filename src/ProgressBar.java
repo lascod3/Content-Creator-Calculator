@@ -103,7 +103,7 @@ public class ProgressBar extends JFrame{
 				}
 					
 				frame.dispose();
-				new ContentResult();		
+				new ContentOutput();		
 			}
 		};new Thread(runnable).start();
 			

@@ -17,7 +17,7 @@ public class Content {
 		Content.numberOfPost = numberOfPost;
 		Content.niche = niche;
 		Content.platform = platform;
-		influencers = "Testing ";
+		// influencers = "Testing ";
 		price = 0;
 	}
 	public long getFollowers() {
@@ -83,19 +83,19 @@ public class Content {
 	public String checks(){
 		
 	if(followers>=1000 && followers<10000) {
-			influencers = "You are a Nano-influencer";
+			influencers = "Nano-influencer: 1,000–10,000 followers";
 		}
 		else if(followers>10000 && followers<50000){
-			influencers = "You are a Micro-influencer";
+			influencers = "Micro-influencer: 10,000–50,000 followers";
 		}
 		else if(followers>50000 && followers<500000){
-			influencers = "You are a Mid-tier influencer";
+			influencers = "Mid-tier influencer: 50,000–500,000 followers";
 		}
 		else if(followers>500000 && followers<1000000){
-			influencers = "You are a Macro-influencer";
+			influencers = "Macro-influencer: 500,000–1,000,000 followers";
 		}
 		else if(followers>1000000){
-			influencers = "You are a Mega-influencer";
+			influencers = "Mega-influencer: 1,000,000+ followers";
 		}
 		else {
 			influencers = "Your Account is not quite profitable";

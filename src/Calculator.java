@@ -41,12 +41,14 @@ public class Calculator extends JFrame  implements ActionListener{
 		frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().setBackground(new Color(103,105,105) ); 
-        panel = addJPanels(content.getFollowers(), content.getEngagment(), content.getNoPost(),content.niche, content.getPlatform());
-        frame.add(panel[0]);
+        // panel = addJPanels(content.getFollowers(), content.getEngagment(), content.getNoPost(),content.niche, content.getPlatform());
+        panel = addJPanels();
+		frame.add(panel[0]);
         frame.setVisible(true);
 	}
 	
-	 public JPanel[] addJPanels(long follower, double engagement,int  noOfpost,String niche, String platform) 
+	//  public JPanel[] addJPanels(long follower, double engagement,int  noOfpost,String niche, String platform) 
+	public JPanel[] addJPanels()
 	 {  
 		 panel = new JPanel[8];
 		
@@ -79,8 +81,8 @@ public class Calculator extends JFrame  implements ActionListener{
 		 
 		 //North Panel
 		 panel[1].setLayout(new GridBagLayout());
-		 panel[1].setPreferredSize(new Dimension(1100,410));
-		 panel[1].setBackground(new Color(103,105,105));
+		 panel[1].setPreferredSize(new Dimension(1100,420));
+		 panel[1].setBackground(new Color(230,230,230,255));
 		 panel[1].setBorder(BorderFactory.createLineBorder(new Color(230,230,230,255), 10));
 		
 		 //Influencer
@@ -93,13 +95,8 @@ public class Calculator extends JFrame  implements ActionListener{
 		 
 		  gbc.gridx = 0;
 		  gbc.gridy = 1;
-		  gbc.insets = new Insets(0,0,0,0);
+		//   gbc.insets = new Insets(0,0,0,0);
 		  titleLabel[2].setText(content.getInfluencers());
-		//   titleLabel[2].setForeground(new Color(245,245,245,255));
-		  titleLabel[2].setForeground(Color.red);
-		  titleLabel[2].setPreferredSize(new Dimension(250, 100));
-		  titleLabel[2].setOpaque(true);
-		//   titleLabel[2].setBackground(new Color(245,245,245,255));
 		  panel[1].add(titleLabel[2], gbc);
 
 		 
@@ -120,7 +117,8 @@ public class Calculator extends JFrame  implements ActionListener{
 		 gbc.gridx = 1;
 		 gbc.gridy = 0;
 		 gbc.insets = new Insets(0,0,0,0);
-		 label[0].setText(Long.toString(follower));
+		//  label[0].setText(Long.toString(follower));
+		label[0].setText(Long.toString(content.getFollowers()));
 		 panel[2].add(label[0], gbc); //follower label
 		 
 		 gbc.gridx = 1;
@@ -130,9 +128,7 @@ public class Calculator extends JFrame  implements ActionListener{
 		 
 		 
 		 
-		 //Second
-		 
-		 
+		 //Second		 
 		 gbc.gridx = 2;
 		 gbc.gridy = 0; 
 		 gbc.insets = new Insets(0,100,0,0);
@@ -142,7 +138,8 @@ public class Calculator extends JFrame  implements ActionListener{
 		 gbc.gridx = 3;
 		 gbc.gridy = 0;
 		 gbc.insets = new Insets(0,0,0,100);
-		 label[1].setText(Double.toString(engagement));
+		//  label[1].setText(Double.toString(engagement));
+		label[1].setText(Double.toString(content.getEngagment()));
 		 panel[2].add(label[1], gbc);// engagement label
 		 
 		 gbc.gridx = 3;
@@ -161,7 +158,8 @@ public class Calculator extends JFrame  implements ActionListener{
 		 gbc.gridx = 5;
 		 gbc.gridy = 0;
 		 gbc.insets = new Insets(0,0,0,0);
-		 label[2].setText(Integer.toString(noOfpost));
+		//  label[2].setText(Integer.toString(noOfpost));
+		label[2].setText(Integer.toString(content.getNoPost()));
 		 panel[2].add(label[2], gbc); //Post Label
 
 		 gbc.gridx = 5;
@@ -188,8 +186,9 @@ public class Calculator extends JFrame  implements ActionListener{
 	 
 	 public JLabel[] addLabels() {
 		 font = addsFont();
-		 label = new JLabel[3];
 		 String[] labels = {"0", "0","0" };
+		 label = new JLabel[labels.length];
+		
 		 for(int i = 0; i<label.length; i++) {
 			 label[i] = new JLabel(labels[i]);
 			 label[i].setPreferredSize(new Dimension(100, 100));
@@ -215,20 +214,28 @@ public class Calculator extends JFrame  implements ActionListener{
 	 
 	 public JLabel[] addTitleLabels() {
 		 font = addsFont();
-		 titleLabel = new JLabel[4];
 		 String[] labels = {"Followers", "Engagement","Industry", "Number of Post"};
+		 titleLabel = new JLabel[labels.length];
+		
 		 for(int i = 0; i<titleLabel.length; i++) {
 			 titleLabel[i] = new JLabel(labels[i]);
+			 
 			 titleLabel[i].setFont(font[2]);
 			 titleLabel[i].setForeground(new Color(14,91,229));
 		 }
 		 titleLabel[2].setFont(font[0]);
+		 titleLabel[2].setOpaque(true);
+		 titleLabel[2].setHorizontalAlignment(JLabel.CENTER);
+		 titleLabel[2].setForeground(Color.black);
+		 titleLabel[2].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		//  titleLabel[2].setPreferredSize(new Dimension(150,35));
+		 
 		 return  titleLabel;
 	 }
 	 
 	 public ImageIcon[] addsImageIcon() {
 	        String[] iconString = {"industry.png", "followers.png", "engagement.png", "post.png", "engage.png"};
-	        icon =  new ImageIcon[5];
+	        icon =  new ImageIcon[iconString.length];
 
 	       	try{
 					for(int i = 0; i< icon.length; i++) 
@@ -250,7 +257,6 @@ public class Calculator extends JFrame  implements ActionListener{
 	 public ImageIcon influencerImage() {
 			influIG = new ImageIcon("influencer.png");
 			influIG.setImage(influIG.getImage().getScaledInstance(350, 350, DO_NOTHING_ON_CLOSE));
-			
 		 return influIG;
 	 }
 
@@ -272,11 +278,12 @@ public class Calculator extends JFrame  implements ActionListener{
 	
 		if(e.getSource()== calculateButton) {
 			
-			  ProgressBar bar = new ProgressBar();
-			  bar.progress();			
+			//   ProgressBar bar = new ProgressBar();
+			//   bar.progress();			
 			  
 			  content.caluator(content.getPlatform());
 			  System.out.println("Who you are "+ content.getInfluencers());
+			  new ContentOutput();	
 			  
 //			  ContentResult result = new ContentResult();
 			  

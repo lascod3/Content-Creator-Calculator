@@ -129,12 +129,13 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
         
 /****Panel 6 **/
         panel[6].setLayout(new GridBagLayout());
-        panel[6].setBackground(new Color(14,91,229));      
+        panel[6].setBackground(new Color(14,91,229));    
+        // panel[6].setBackground(new Color(214,69,11,255));  
         
        
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(0,0,0,5);
+        gbc.insets = new Insets(0,0,0,0);
         panel[6].add(label[0],gbc); //Followers
 
         gbc.gridx = 1;
@@ -144,7 +145,7 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
         
         gbc.gridx = 2;
         gbc.gridy = 0;
-        gbc.insets = new Insets(0,0,0,5);
+        gbc.insets = new Insets(0,0,0,0);
         panel[6].add(label[1],gbc); //Engagement
         
         gbc.gridx = 3;
@@ -160,7 +161,7 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
         
         gbc.gridx = 5;
         gbc.gridy = 0;
-         gbc.insets = new Insets(0,40,0,5);
+         gbc.insets = new Insets(0,40,0,0);
         panel[6].add(label[4], gbc); //Number of Post Label
         
         gbc.gridx = 6;
@@ -181,6 +182,7 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
 
 
         panel[7].setBackground(new Color(14,91,229));
+        // panel[7].setBackground(new Color(214,69,11,255));
         panel[7].setPreferredSize(new Dimension(1220, 75));
         panel[7].add(submitButton);
         
@@ -204,13 +206,10 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
             textfield[i] = new JTextField("1", 6);
             textfield[i].setFont(font[0]);
             textfield[i].setBorder(null);
-            // textfield[i].setPreferredSize(new Dimension(300,50));
-
         }
 
         textfield[1] = new JTextField("1", 3); 
         textfield[1].setFont(font[0]);
-        // textfield[1].setEditable(false);
         
         textfield[2] = new JTextField("1",4);
         textfield[2].setFont(font[0]);
@@ -223,7 +222,7 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
         font = addsFont();
         label = new JLabel[6];
         
-        String[] labels = {"Followers", "Engagement","Niche", "Priculator", "Number of Post","Platform"};
+        String[] labels = {"Followers ", "Engagement ","Niche ", "Priculator", "Number of Post ","Platform"};
         for (int i = 0; i < label.length; i++) {
             label[i] = new JLabel(labels[i]);
             label[i].setForeground(new Color(230,230,230,255));
@@ -283,7 +282,7 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
 //            radio[i].setBackground(Color.white);
             radio[i].setPreferredSize(new Dimension(150, 50));
             radio[i].setSelected(true);
-            radio[i].setBorder(BorderFactory.createLineBorder(Color.white));
+            // radio[i].setBorder(BorderFactory.createLineBorder(Color.white));
 //            radio[i].setBorderPainted(true);
 //            radio[i].setFocusPainted(true);
             radio[i].setIconTextGap(5);
