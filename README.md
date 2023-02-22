@@ -1,6 +1,6 @@
 # Content-Creator-Calculator
 
-This is a simple content Creator App that help creator to calculate how much they can potentially charge
+This is a simple content Creator App that help creator to calculate how much they can potentially charge.
 
 
 <img width="1232" alt="Screenshot 2023-02-22 at 18 23 35" src="https://user-images.githubusercontent.com/57866950/220738554-857ed18a-772b-45f4-870e-9c46713fea6a.png">
