@@ -16,6 +16,7 @@ public class Content {
 		Content.engagement = engagement;
 		Content.numberOfPost = numberOfPost;
 		Content.niche = niche;
+		// Content.niche = "Testing"; 
 		Content.platform = platform;
 		// influencers = "Testing ";
 		price = 0;

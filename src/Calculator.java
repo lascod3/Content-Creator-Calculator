@@ -12,7 +12,7 @@ public class Calculator extends JFrame  implements ActionListener{
 	
 	
 	public static void main(String[] args) {
-		 new Calculator();
+		//  new Calculator();
 	    }
     Content content = new Content(Content.followers, Content.engagement, Content.numberOfPost, Content.niche, Content.platform);
 
@@ -278,12 +278,12 @@ public class Calculator extends JFrame  implements ActionListener{
 	
 		if(e.getSource()== calculateButton) {
 			
-			//   ProgressBar bar = new ProgressBar();
-			//   bar.progress();			
+			  ProgressBar bar = new ProgressBar();
+			  bar.progress();			
 			  
 			  content.caluator(content.getPlatform());
 			  System.out.println("Who you are "+ content.getInfluencers());
-			  new ContentOutput();	
+			
 			  
 //			  ContentResult result = new ContentResult();
 			  

@@ -87,13 +87,7 @@ public class Priculator extends JFrame implements ChangeListener, ActionListener
 
        
 
-        
-     
-//        gbc.gridx = 0;
-//        gbc.gridy = 0;
-//        imageLabel[0].setIcon(icon[3]);
-////        gbc.insets = new Insets(0,50,0,0);
-//        panel[3].add(imageLabel[0], gbc);
+    
     
         gbc.gridx = 0;
         gbc.gridy = 0;

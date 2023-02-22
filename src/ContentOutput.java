@@ -17,8 +17,10 @@ public class ContentOutput extends JFrame {
     JFrame frame = new JFrame();
 	private JPanel[] panel = null;
     private JLabel[] label = null;
+    private JLabel[] titleLable = null;
     private ImageIcon[] icon = null;
     private Font[] font = null;
+
 
     Content content = new Content(Content.followers, Content.engagement,Content.numberOfPost, Content.niche, Content.platform);
 	
@@ -27,7 +29,7 @@ public class ContentOutput extends JFrame {
 	    }
 	
     public ContentOutput(){
-        frame.setSize(900, 800);
+        frame.setSize(1000, 900);
         frame.setLocationRelativeTo(frame);
         frame.setLayout(new FlowLayout());
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,11 +50,13 @@ public class ContentOutput extends JFrame {
 		 }
 
          label = addsJLabel();
+         titleLable =  addsTitleJLabel();
          font =  addFonts();
+
 
          
          panel[0].setBackground(new Color(103,105,105)); //Top Panel
-         panel[0].setPreferredSize(new Dimension(850,750));
+         panel[0].setPreferredSize(new Dimension(950,820));
          panel[0].setLayout(new BorderLayout());
 
          panel[0].add(panel[1], BorderLayout.NORTH);
@@ -65,60 +69,85 @@ public class ContentOutput extends JFrame {
          
          GridBagConstraints gbc = new GridBagConstraints();
 
-         //Top Panel
+/**** Top Panel*/
          gbc.gridx = 0;
          gbc.gridy = 0;
          panel[1].add(label[0], gbc); 
 
     
-         //Center Panel
+/**** Center Panel*/
          panel[2].setBackground(new Color(245,245,245,255)); 
         //  panel[2].setBackground(Color.gray); 
          panel[2].setLayout(new GridBagLayout());
-         panel[2].setPreferredSize(new Dimension(800, 50));
+        //  panel[2].setPreferredSize(new Dimension(800,50)); 
+        //   gbc.insets = new Insets(0,0,30, 0);
+       
 
          gbc.gridx = 0;
          gbc.gridy = 0;
-         label[1].setText(content.getIndustry());
          label[1].setBorder(BorderFactory.createLineBorder(Color.BLACK));
-         label[1].setPreferredSize(new Dimension(150, 75));
+         label[1].setPreferredSize(new Dimension(200,50));
+         label[1].setText("Niche: " + content.getIndustry());
+         label[1].setForeground(Color.BLACK);
          panel[2].add(label[1], gbc); //Niche label
 
          gbc.gridx = 1;
-         gbc.gridy = 0;
-         gbc.insets = new Insets(0,50,0, 0);
-         panel[2].add(label[2], gbc); //Posting Label
+         gbc.gridy = 1;
+         gbc.insets = new Insets(30,0, 0, 0);
+         panel[2].add(label[2], gbc); //Posting Image Label
 
          gbc.gridx = 2;
-         gbc.gridy = 0;
+         gbc.gridy = 1;
+         gbc.insets = new Insets(30,0, 0, 30);
+         panel[2].add(label[3], gbc); //Post Label output
+
+         gbc.gridx = 2;
+         gbc.gridy = 2;
          gbc.insets = new Insets(0,0,0, 0);
-         panel[2].add(label[3], gbc); //Result Label
+         panel[2].add(titleLable[0], gbc); //Post Label title
+
+        //  gbc.gridx = 2;
+        //  gbc.gridy = 1;
+        //  gbc.insets = new Insets(30,0,0, 0);
+        //  panel[2].add(label[4], gbc); //Stories Label
 
          gbc.gridx = 3;
-         gbc.gridy = 0;
-         gbc.insets = new Insets(0,50,0, 0);
-         panel[2].add(label[4], gbc); //StoriesLabel
+         gbc.gridy = 1;
+         gbc.insets = new Insets(30,0,0, 0);
+         panel[2].add(label[4], gbc); //Stories Image Label
 
          gbc.gridx = 4;
-         gbc.gridy = 0;
+         gbc.gridy = 1;
+         panel[2].add(label[5], gbc); //Stories  Label output
+
+         gbc.gridx = 4;
+         gbc.gridy = 2;
          gbc.insets = new Insets(0,0,0, 0);
-         panel[2].add(label[5], gbc); //Tex Label
+         panel[2].add(titleLable[1], gbc); //Stories Label title
 
-        //  gbc.gridx = 5;
-        //  gbc.gridy = 0;
-        //  gbc.insets = new Insets(0,0,0, 0);
-        //  panel[2].add(label[6], gbc); //Result Label
-         
-         
-         //Botto Panel
+         gbc.gridx = 5;
+         gbc.gridy = 1;
+         gbc.insets = new Insets(30,30,0, 0);
+         panel[2].add(label[6], gbc); //Video Image Label
 
+         gbc.gridx = 6;
+         gbc.gridy = 1;
+         gbc.insets = new Insets(30,0,0, 0);
+         panel[2].add(label[7], gbc); //Video Label output
+
+         gbc.gridx = 6;
+         gbc.gridy = 2;
+         gbc.insets = new Insets(0,0,0, 0);
+         panel[2].add(titleLable[2], gbc); //Post Label title
+         
+/**** Bottom Panel*/
         //  panel[3].setBackground(new Color(230,230,230,255)); light gray color
          panel[3].setBackground(new Color(14,91,229));
-         panel[3].setPreferredSize(new Dimension(800, 550));
+         panel[3].setPreferredSize(new Dimension(800,550));
 
          Dimension size = new Dimension(275, 200);
          panel[3].setLayout(new GridBagLayout());
-         gbc.insets = new Insets(20, 0, 40, 50);
+         gbc.insets = new Insets(35, 0, 40, 50);
 
          gbc.gridx = 0;
          gbc.gridy = 0;
@@ -142,7 +171,6 @@ public class ContentOutput extends JFrame {
          panel[3].add(panel[7], gbc);
 
 
-
 //		 panel[0].set
     	return panel;
     }
@@ -150,7 +178,7 @@ public class ContentOutput extends JFrame {
     public JLabel[] addsJLabel(){
         font =  addFonts();
         String title = "Based on information provided, these are the estimated Cost";
-        String[] labels = {title, "Niche ", "Posting ","p0" ,"Story ", "s0",  "Facebook", "Instagram", "Tiktok", "YouTube"};
+        String[] labels = {title, "Niche ", "Posting ","p0" ,"Story ", "s0", "video ", "0v", "Facebook", "Instagram", "Tiktok", "YouTube"};
         label = new JLabel[labels.length];
         for (int i = 0; i < label.length; i++) {
             label[i] = new JLabel(labels[i]);
@@ -158,7 +186,7 @@ public class ContentOutput extends JFrame {
             label[i].setHorizontalAlignment(JLabel.CENTER);
         }
 
-        Dimension dim = new Dimension(150, 75);
+        Dimension dim = new Dimension(125, 75);
         label[3].setOpaque(true);
         label[3].setBackground(new Color(230,230,230,255));
         label[3].setPreferredSize(dim);
@@ -167,11 +195,22 @@ public class ContentOutput extends JFrame {
         label[5].setBackground(new Color(230,230,230,255));
         label[5].setPreferredSize(dim);
 
-        // label[6].setOpaque(true);
-        // label[6].setBackground(Color.red);
-        // label[6].setPreferredSize(dim);
-        // label[i]. 
+        label[7].setOpaque(true);
+        label[7].setBackground(new Color(230,230,230,255));
+        label[7].setPreferredSize(dim);
         return label;
+    }
+    public JLabel[] addsTitleJLabel(){
+
+        font =  addFonts();
+        String[] labels = {"Posting ","Story ", "video "};
+        titleLable= new JLabel[labels.length];
+        for (int i = 0; i < titleLable.length; i++) {
+            titleLable[i] = new JLabel(labels[i]);
+            titleLable[i].setFont(font[0]);
+            titleLable[i].setHorizontalAlignment(JLabel.CENTER);
+        }
+        return titleLable;
     }
 
     // public JLabel[] addsImageJLabel(){
