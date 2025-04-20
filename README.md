@@ -1,6 +1,33 @@
-# Content-Creator-Calculator
+Content-Creator-Calculator
+Content-Creator-Calculator is a simple web application designed to help content creators estimate how much they can potentially charge based on input parameters such as platform, audience size, engagement rate, and more.
 
-This is a simple content Creator calculator App that helps creators to calculate how much they can potentially charge. I have not added the formula yet.
+🚧 The pricing formula is not yet implemented, but the interface is fully functional and ready for integration.
+
+Purpose
+The tool aims to simplify the process of calculating potential earnings for creators working with brands, agencies, or freelance clients. It’s ideal for influencers, social media managers, and digital marketers.
+
+Features
+User-friendly interface
+
+Custom input fields for estimating pricing
+
+Real-time value update based on entries (formula integration coming soon)
+
+Basic HTML/CSS design with functional layout
+
+Planned Improvements
+Implement pricing formula based on industry standards
+
+Add platform-specific recommendations
+
+Export pricing estimate as PDF or email
+
+Dark mode UI
+
+React version with enhanced interactivity
+
+
+It definitely could make use of 3D Icons, and better UI entirely, which I intend to do.
 
 
 <img width="1232" alt="Screenshot 2023-02-22 at 18 23 35" src="https://user-images.githubusercontent.com/57866950/220738554-857ed18a-772b-45f4-870e-9c46713fea6a.png">
