@@ -1,4 +1,5 @@
 Content-Creator-Calculator
+
 Content-Creator-Calculator is a simple web application designed to help content creators estimate how much they can potentially charge based on input parameters such as platform, audience size, engagement rate, and more.
 
 🚧 The pricing formula is not yet implemented, but the interface is fully functional and ready for integration.
