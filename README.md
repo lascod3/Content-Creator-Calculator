@@ -8,27 +8,20 @@ Purpose
 The tool aims to simplify the process of calculating potential earnings for creators working with brands, agencies, or freelance clients. It’s ideal for influencers, social media managers, and digital marketers.
 
 Features
-User-friendly interface
-
-Custom input fields for estimating pricing
-
-Real-time value update based on entries (formula integration coming soon)
-
-Basic HTML/CSS design with functional layout
+1. User-friendly interface
+2. Custom input fields for estimating pricing
+3. Real-time value update based on entries (formula integration coming soon)
+4. Basic HTML/CSS design with functional layout
 
 Planned Improvements
-Implement pricing formula based on industry standards
+1. Implement pricing formula based on industry standards
+2. Add platform-specific recommendations
+3. Export pricing estimate as PDF or email
+4. Revamp the UI with 3D icons and a cleaner, more modern design
+5. React version with enhanced interactivity
+6. Integrate AI to offer smart pricing suggestions based on trends, engagement metrics, and platform data
 
-Add platform-specific recommendations
-
-Export pricing estimate as PDF or email
-
-Dark mode UI
-
-React version with enhanced interactivity
-
-
-It definitely could make use of 3D Icons, and better UI entirely, which I intend to do.
+While the current UI is functional, there's a lot of room for visual improvement. I plan to upgrade the interface with 3D icons and a cleaner, more modern look to enhance user experience.
 
 
 <img width="1232" alt="Screenshot 2023-02-22 at 18 23 35" src="https://user-images.githubusercontent.com/57866950/220738554-857ed18a-772b-45f4-870e-9c46713fea6a.png">
